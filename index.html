@@ -11,54 +11,56 @@
 </head>
 
 <body>
-<!--*************************** HEADER *******************************************-->
-  <header>
-      <hero>
-        <h1>The Database of Ice and Fire</h1>
-      <nav>
-        <ul>
-          <li><a href="#">Home Page</a></li>
-          <li><a href="#">Search Characters</a></li>
-          <li><a href="#">Search Houses</a></li>
-        </ul>
-      </nav>
-    </hero>
-  </header>
-<!--*************************** MAIN *********************************************-->
-  <main>
-    <section id="top">
-    </section>
-    <section id="bottom">
-    </section>
-  </main>
-<!--*************************** TEMPLATES ****************************************-->
-<!--*************************** TEMPLATES HOME PAGE ******************************-->
-<!-- Home Page Top Section, appendTo('.top') section. -->
-  <script id="about" type="text/x-handlebars-template">
-  </script>
-<!-- Home Page Bottom Section, appendTo('.bottom') section -->
-  <script id="choose-search" type="text/x-handlebars-template">
-  </script>
+    <!--*************************** HEADER *******************************************-->
+    <header>
+        <hero>
+            <h1>The Database of Ice and Fire</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Home Page</a></li>
+                    <li><a href="#">Search Characters</a></li>
+                    <li><a href="#">Search Houses</a></li>
+                </ul>
+            </nav>
+        </hero>
+    </header>
+    <!--*************************** MAIN *********************************************-->
+    <main>
+        <section id="top">
+        </section>
+        <section id="bottom">
+        </section>
+    </main>
+    <!--*************************** TEMPLATES ****************************************-->
+    <!--*************************** TEMPLATES HOME PAGE ******************************-->
+    <!-- Home Page Top Section, appendTo('#top') section. -->
+    <script id="about" type="text/x-handlebars-template">
+        <h2>Top Section of Home Page....</h2>
+    </script>
+    <!-- Home Page Bottom Section, appendTo('#bottom') section -->
+    <script id="choose-search" type="text/x-handlebars-template">
+    </script>
 
-<!--*************************** TEMPLATES CHARACTER SEARCH PAGE ******************-->
-  <!-- Character Search Page Top Section, appendTo('.top') section. -->
+    <!--*************************** TEMPLATES CHARACTER SEARCH PAGE ******************-->
+    <!-- Character Search Page Top Section, appendTo('#top') section. -->
     <script id="character-search-parameters" type="text/x-handlebars-template">
     </script>
-  <!-- Character Search Page Bottom Section, appendTo('.bottom') section -->
+    <!-- Character Search Page Bottom Section, appendTo('#bottom') section -->
     <script id="character-results" type="text/x-handlebars-template">
     </script>
 
-<!--*************************** TEMPLATES HOUSE SEARCH PAGE **********************-->
+    <!--*************************** TEMPLATES HOUSE SEARCH PAGE **********************-->
 
-  <!-- House Search Page Top Section, appendTo('.top') section. -->
+    <!-- House Search Page Top Section, appendTo('#top') section. -->
     <script id="house-search-parameters" type="text/x-handlebars-template">
     </script>
-  <!-- House Search Page Bottom Section, appendTo('.bottom') section -->
+    <!-- House Search Page Bottom Section, appendTo('#bottom') section -->
     <script id="house-results" type="text/x-handlebars-template">
     </script>
 
-<!--******************************************************************************-->
+    <!--******************************************************************************-->
     <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/handlebars-v4.0.5.js"></script>
     <script src="scripts/main.js"></script>
 </body>
 
