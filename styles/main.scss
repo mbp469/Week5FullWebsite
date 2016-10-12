@@ -1,0 +1,12 @@
+$med-blue: #446087;
+$med-green: #c4d48e;
+$dark-blue: #4c5679;
+$med-grey: #797373;
+$lightgrey: #939194;
+
+@import "partials/header";
+
+* {
+    border: 1px solid $dark-blue;
+    font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif;
+}

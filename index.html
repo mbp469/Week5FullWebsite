@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>The Ice and Fire Database</title>
+    <meta name="viewport" content="width=device-width" , initial-scale=1>
+    <link rel="stylesheet" type="text/css" href="styles/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Amita|Courgette|Fjalla+One|Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/font-awesome-4.6.3/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+
+<body>
+<!--*************************** HEADER *******************************************-->
+  <header>
+      <hero>
+        <h1>The Database of Ice and Fire</h1>
+      <nav>
+        <ul>
+          <li><a href="#">Home Page</a></li>
+          <li><a href="#">Search Characters</a></li>
+          <li><a href="#">Search Houses</a></li>
+        </ul>
+      </nav>
+    </hero>
+  </header>
+<!--*************************** MAIN *********************************************-->
+  <main>
+    <section id="top">
+    </section>
+    <section id="bottom">
+    </section>
+  </main>
+<!--*************************** TEMPLATES ****************************************-->
+<!--*************************** TEMPLATES HOME PAGE ******************************-->
+<!-- Home Page Top Section, appendTo('.top') section. -->
+  <script id="about" type="text/x-handlebars-template">
+  </script>
+<!-- Home Page Bottom Section, appendTo('.bottom') section -->
+  <script id="choose-search" type="text/x-handlebars-template">
+  </script>
+
+<!--*************************** TEMPLATES CHARACTER SEARCH PAGE ******************-->
+  <!-- Character Search Page Top Section, appendTo('.top') section. -->
+    <script id="character-search-parameters" type="text/x-handlebars-template">
+    </script>
+  <!-- Character Search Page Bottom Section, appendTo('.bottom') section -->
+    <script id="character-results" type="text/x-handlebars-template">
+    </script>
+
+<!--*************************** TEMPLATES HOUSE SEARCH PAGE **********************-->
+
+  <!-- House Search Page Top Section, appendTo('.top') section. -->
+    <script id="house-search-parameters" type="text/x-handlebars-template">
+    </script>
+  <!-- House Search Page Bottom Section, appendTo('.bottom') section -->
+    <script id="house-results" type="text/x-handlebars-template">
+    </script>
+
+<!--******************************************************************************-->
+    <script src="scripts/jquery-3.1.1.min.js"></script>
+    <script src="scripts/main.js"></script>
+</body>
+
+
+</html>

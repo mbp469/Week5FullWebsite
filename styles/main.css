@@ -1,0 +1,33 @@
+header {
+  background: url("images/a-land-of-ice-and-fire-571-cropped.jpg"), linear-gradient(to right, #446087, #c4d48e, #4c5679);
+  background-repeat: no-repeat;
+  height: 252px;
+  background-size: cover; }
+
+h1 {
+  font-size: 3em;
+  color: #797373;
+  text-shadow: -6px -5px 6px #939194; }
+
+nav {
+  font-size: 2em;
+  position: relative; }
+  nav ul {
+    float: right;
+    position: relative;
+    top: -65px; }
+    nav ul li {
+      margin: 12% 5%;
+      text-align: right; }
+      nav ul li a {
+        color: #c4d48e;
+        text-shadow: -2px -2px 2px #797373; }
+        nav ul li a:focus {
+          color: #939194;
+          text-shadow: -2px -2px 2px #c4d48e; }
+
+* {
+  border: 1px solid #4c5679;
+  font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif; }
+
+/*# sourceMappingURL=main.css.map */
