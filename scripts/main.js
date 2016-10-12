@@ -24,14 +24,13 @@ $(document).ready(function() {
         var settings = {
             async: true,
             crossDomain: true,
-            "url": "http://www.anapioficeandfire.com/characters/384",
+            "url": "https://www.anapioficeandfire.com/characters/384?callback=?",
             method: "GET",
             processData: false,
             error: handleError,
             headers: {},
             // data: dataObject,
             dataType: 'json',
-            contentType:    'application/json',
         };
 
 
