@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-
+/******************** TEMPLATE FUNCTIONS ********************************/
     /* set up function to attach a handlebar template
     script is the id tag of the template
     context is the object containing the VARIABLES
@@ -17,66 +17,70 @@ $(document).ready(function() {
         $(html).appendTo("#" + target);
     };
 
-    /* set up query to api based on type of search */
-
-    function search(searchString) {
-
-        var settings = {
-            async: true,
-            crossDomain: true,
-            "url": "https://www.anapioficeandfire.com/characters/384?callback=?",
-            method: "GET",
-            processData: false,
-            error: handleError,
-            headers: {},
-            // data: dataObject,
-            dataType: 'json',
-        };
-
-
-
-        $.ajax(settings).done(function(response) {
-
-            console.log(response);
-        });
-
-    }
-    function handleError() {
-      console.log("error");
-    }
-    search('Jon Snow');
-
-    // function apiGet(queryType, query){
-    //
-    //   var baseUrl = "http://www.anapioficeandfire.com";
-    //   var endPoint;
-    //   var method = "GET";
-    //   // dataObject = (!dataObject) ? {} : dataObject;
-    //   query = (!query) ? '' : query;
-    //   switch (queryType) { // query dictionary
-    //     case 'nameSearch': // Search Method
-    //       endPoint = '/characters?name=' + query;
-    //       break;
-    //     default:
-    //       endPoint = null;
-    //       break;
-    //   }
-    //
-    //   var settings = {
-    //     async: true,
-    //     crossDomain: false,
-    //     url: baseUrl + endPoint,
-    //     method: method,
-    //     processData: false,
-    //     error: handleError,
-    //     headers: {
-    //
-    //     },
-    //     data: dataObject,
-    //     dataType: 'json'
-    //   };
-    //
-    //   return settings;
-    // }
-
+/******************** API CALLS ********************************/
+    /* function to search for a character by name, passed in as searchString- needs to be exact?? */
+    searchCharacters = function(queryType, searchString) {
+    $.ajax({
+        method: "GET",
+        crossDomain: true,
+        dataType: 'json',
+        url: 'http://www.anapioficeandfire.com/api/characters/?name=' + searchString,
+        success: function(response) {
+          console.log(response);
+        },
+        // done: function(data) {
+        //   console.log(data);
+        // },
+        error: function(data) {
+          console.log("Error: " + data);
+        }
+    });
+  };
+    /* function to search for a list of houses by region */
+    searchHouses = function(queryType, region) {
+    $.ajax({
+        method: "GET",
+        crossDomain: true,
+        dataType: 'json',
+        url: 'http://www.anapioficeandfire.com/api/houses?region=' + region,
+        success: function(response) {
+          console.log(response);
+        },
+        done: function(data) {
+          console.log(data);
+        },
+        error: function(data) {
+          console.log("Error: " + data);
+        }
+    });
+  };
+  searchCharacters("Jon Snow");
+  searchHouses();
 });
+/******************** CONSTRUCTORS ******************************/
+
+function Character(dataObject){
+  // dataObject is an array
+  this.name = dataObject.name; //string
+  this.culture = dataObject.culture; // string
+  this.gender = dataObject.gender; // string
+  this.aliases = dataObject.aliases; // array of strings
+  this.allegiances = dataObject.allegiances;// array of urls as strings
+  this.father = dataObject.father; // string
+  this.mother = dataObject.mother; // string
+  this.spouse = dataObject.spouse; // string
+  this.titles = dataObject.titles; // array
+  this.url = dataObject.url; //contains the character number
+  this.born = dataObject.born; // string
+}
+
+function House(dataObject) {
+  // dataObject is an object
+  this.coatOfArms = dataObject.coatOfArms; // string
+  this.currentLord = dataObject.currentLord; // url with character number at end
+  this.heir = dataObject.heir; // url with character number at end
+  this.name = dataObject.name; // string
+  this.overlord = dataObject.overlord; // url with character number at end
+  this.region = dataObject.region; // string
+  this.words = dataObject.words; // string
+}

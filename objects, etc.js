@@ -1,0 +1,192 @@
+Array[1]
+0
+    :
+    Object
+aliases
+    :
+    Array[8]
+0
+    :
+    "Lord Snow"
+1
+    :
+    "Ned Stark's Bastard"
+2
+    :
+    "The Snow of Winterfell"
+3
+    :
+    "The Crow-Come-Over"
+4
+    :
+    "The 998th Lord Commander of the Night's Watch"
+5
+    :
+    "The Bastard of Winterfell"
+6
+    :
+    "The Black Bastard of the Wall"
+7
+    :
+    "Lord Crow"
+length
+    :
+    8
+__proto__
+    :
+    Array[0]
+allegiances
+    :
+    Array[1]
+0
+    :
+    "http://www.anapioficeandfire.com/api/houses/362"
+length
+    :
+    1
+__proto__
+    :
+    Array[0]
+books
+    :
+    Array[1]
+0
+    :
+    "http://www.anapioficeandfire.com/api/books/5"
+length
+    :
+    1
+__proto__
+    :
+    Array[0]
+born
+    :
+    "In 283 AC"
+culture
+    :
+    "Northmen"
+died
+    :
+    ""
+father
+    :
+    ""
+gender
+    :
+    "Male"
+mother
+    :
+    ""
+name
+    :
+    "Jon Snow"
+playedBy
+    :
+    Array[1]
+0
+    :
+    "Kit Harington"
+length
+    :
+    1
+__proto__
+    :
+    Array[0]
+povBooks
+    :
+    Array[4]
+spouse
+    :
+    ""
+titles
+    :
+    Array[1]
+0
+    :
+    "Lord Commander of the Night's Watch"
+length
+    :
+    1
+__proto__
+    :
+    Array[0]
+tvSeries
+    :
+    Array[6]
+url
+    :
+    "http://www.anapioficeandfire.com/api/characters/583"
+__proto__
+    :
+    Object
+length
+    :
+    1
+__proto__
+    :
+    Array[0]
+/////////////////////////////////***********///////////
+Array[0]
+cadetBranches
+:
+Array[0]
+coatOfArms
+:
+"Gyronny Gules and Sable, a hand couped Or"
+currentLord
+:
+"http://www.anapioficeandfire.com/api/characters/298"
+diedOut
+:
+""
+founded
+:
+""
+founder
+:
+""
+heir
+:
+"http://www.anapioficeandfire.com/api/characters/1922"
+name
+:
+"House Allyrion of Godsgrace"
+overlord
+:
+"http://www.anapioficeandfire.com/api/houses/285"
+region
+:
+"Dorne"
+seats
+:
+Array[1]
+swornMembers
+:
+Array[4]
+0
+:
+"http://www.anapioficeandfire.com/api/characters/298"
+1
+:
+"http://www.anapioficeandfire.com/api/characters/1129"
+2
+:
+"http://www.anapioficeandfire.com/api/characters/1301"
+3
+:
+"http://www.anapioficeandfire.com/api/characters/1922"
+length
+:
+4
+__proto__
+:
+Array[0]
+titles
+:
+Array[0]
+url
+:
+"http://www.anapioficeandfire.com/api/houses/2"
+words
+:
+"No Foe May Pass"
