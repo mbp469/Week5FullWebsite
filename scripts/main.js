@@ -2,7 +2,7 @@ $(document).ready(function() {
     /******************** CONSTRUCTORS ******************************/
 
     function Character(dataObject) {
-        // arrayFromCall is an array of object/s
+        // dataObject is one object from the array returned from api call.
         this.name = dataObject.name; //string
         this.culture = dataObject.culture; // string
         this.gender = dataObject.gender; // string
@@ -17,7 +17,7 @@ $(document).ready(function() {
     }
 
     function House(dataObject) {
-        // dataObject is an array of objects
+      // dataObject is one object from the array returned from api call.
         this.coatOfArms = dataObject.coatOfArms; // string
         this.currentLord = dataObject.currentLord; // url with character number at end
         this.heir = dataObject.heir; // url with character number at end
@@ -67,8 +67,9 @@ $(document).ready(function() {
             url: 'http://www.anapioficeandfire.com/api/characters/?name=' + searchString,
             success: function(response) {
               var newChar = new Character(response[0]);
-              console.log(response);
-              console.log(response[0]);
+              console.log(newChar);
+              return newChar;
+              // append the character to #bottom section
             },
             error: function(data) {
                 console.log("Error: " + data);
@@ -84,8 +85,14 @@ $(document).ready(function() {
             dataType: 'json',
             url: 'http://www.anapioficeandfire.com/api/houses?region=' + region,
             success: function(response) {
-              var newHouse = new House(response[0]);
-              console.log(response[0]);
+              var listOfHouses = [];
+              for (var index in response){
+                var newHouse = new House(response[index]);
+                listOfHouses.push(newHouse);
+              }
+              console.log(listOfHouses);
+              return listOfHouses;
+              // append each house to #bottom section
             },
             error: function(data) {
                 console.log("Error: " + data);
