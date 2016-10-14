@@ -48,13 +48,16 @@ $('#top').on('click', '#submit-character-search',function(event){
   searchCharacters(searchString);
 });
 
-//when "Search Houses" is clicked, append a search field.
+//when "Search Houses" is clicked, append a search field, save selection.
 $('#top').empty();
 $('#houses-search-page').on('click', function(event){
-  console.log("houses search page");
   appendTemplate('houses-search', 'top');
   var context = listOfRegions;
   appendTemplate('select-region', 'regions', context);
+  $('#regions').on('change', function(event){
+    var selectedRegion = $('#regions option:selected').text();
+    console.log("selectedRegion: " + selectedRegion);
+  });
 });
 
 
