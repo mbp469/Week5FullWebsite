@@ -11,6 +11,34 @@
         function updateHash(string) {
             window.location.hash = string;
         }
+        /* navigating based on hash */
+        window.addEventListener("hashchange", function() {
+        if (window.location.hash > 0) {
+          console.log(window.location.hash);
+          switch (hash) {
+            case 'home':
+            $('#top').empty();
+            $('#bottom').empty();
+            buildHomePage();
+            updateHash('home');
+              break;
+            case 'characters':
+            $('#top').empty();
+            $('#bottom').empty();
+            buildCharacterSearchPage();
+            updateHash('characters');
+              break;
+            case 'houses':
+            $('#top').empty();
+            $('#bottom').empty();
+            buildHousesSearchPage();
+            updateHash('houses');
+              break;
+            default:
+              init();
+          }
+        }
+      });
 
         /******************** CONSTRUCTORS ******************************/
         function Character(dataObject) {
@@ -39,30 +67,22 @@
         };
 
         function House(dataObject) {
-            // dataObject is one object from the array returned from api call.
-            // this.coatOfArms = dataObject.coatOfArms; // string
-            // this.currentLord = dataObject.currentLord; // url with character number at end
-            // this.heir = dataObject.heir; // url with character number at end
             this.name = dataObject.name; // string
-            // this.overlord = dataObject.overlord; // url with character number at end
-            // this.region = dataObject.region; // string
             this.words = dataObject.words; // string
         }
         House.prototype.toString = function() {
             return "House: " + this.name;
         };
 
-        function HouseList(dataObject) {
-            //TODO add list of houses to (#bottom)
-            console.log("HouseList");
-        }
         /******************** TEMPLATE FUNCTIONS ********************************/
         /* build Home Page */
         function buildHomePage() {
             $('#top').empty();
+            $('#bottom').empty();
             updateHash('home');
             appendTemplate('about', 'top');
-            var hash = location.hash.substring(1);
+            appendTemplate('choose-search', 'bottom');
+
         }
         /* build Houses Search Page */
         function buildHousesSearchPage() {
@@ -70,12 +90,10 @@
             appendTemplate('houses-search', 'top');
             var context = listOfRegions;
             appendTemplate('select-region', 'regions', context);
-            updateHash("houses");
         }
         /* build Character Search Page */
         function buildCharacterSearchPage() {
             appendTemplate('character-search', 'top');
-            updateHash("character");
         }
         /* prepares the context of a character for the template */
         function getContextCharacter(dataObject) {
@@ -88,19 +106,6 @@
             };
             return context;
         }
-        /* prepares the context of a house for the template */
-        // function getContextHouse(listOfHouses) {
-        //   var context = {
-        //     listOfHouses
-        //   };
-        //   return context;
-        // }
-
-        /* set up function to attach a handlebar template
-        script is the id tag of the template
-        context is the object containing the VARIABLES
-        target is the element to attach to
-        */
         function appendTemplate(script, target, context) {
             context = context || {};
             var source = $('#' + script).html();
@@ -243,11 +248,13 @@
         });
 
         //when character search is submitted, collect data from field and run search.
-        $('#top').on('click', '#submit-character-search', function(event) {
+        $('#top').on('keypress', '#character-search-field', function(event) {
+          if(event.keyCode === 13) {
             $('#bottom').empty();
             updateHash('characters');
             var searchString = $('#character-search-field').val();
             searchCharacters(searchString);
+          }
         });
 
         //when houses search is submitted, collect data from field and run search.

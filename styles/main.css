@@ -8,52 +8,73 @@ h1 {
   font-size: 3em;
   color: #797373;
   text-shadow: -6px -5px 6px #939194;
-  margin-left: 1%; }
+  margin-left: 1%;
+  padding-top: 1%; }
+  @media only screen and (max-width: 890px) {
+    h1 {
+      color: #4c5679;
+      text-shadow: -6px -5px 6px #4c5679; } }
 
 nav {
   font-size: 2em;
   position: relative;
   margin-right: 1%; }
+  @media only screen and (max-width: 890px) {
+    nav {
+      float: left;
+      width: 100%; } }
   nav ul {
     float: right;
     position: relative;
     top: -65px; }
+    @media only screen and (max-width: 890px) {
+      nav ul {
+        top: 61px;
+        display: inline-flex;
+        width: 100%; } }
     nav ul li {
       margin: 12% 5%;
       text-align: right; }
+      @media only screen and (max-width: 890px) {
+        nav ul li {
+          margin: 7% 2%;
+          text-align: center; } }
       nav ul li a {
         color: #c4d48e;
         text-shadow: -2px -2px 2px #797373; }
+        @media only screen and (max-width: 890px) {
+          nav ul li a {
+            color: #697162;
+            text-shadow: -2px -2px 2px #acb8d1; } }
         nav ul li a:focus {
           color: #939194;
-          text-shadow: -2px -2px 2px #c4d48e; }
+          text-shadow: -2px -2px 2px #446087; }
+          @media only screen and (max-width: 890px) {
+            nav ul li a:focus {
+              color: #4c5679;
+              text-shadow: 2px -2px 2px #939194; } }
 
 #search-character-container {
-  display: flex;
   margin: 2% auto;
   border: none;
-  padding-bottom: 2%; }
+  padding: 0 0 2% 5%;
+  text-align: left;
+  width: 70%; }
   #search-character-container input {
     margin: 0 auto;
-    width: 50%;
+    width: 45%;
     line-height: 3em;
     font-size: 1.5em;
     text-align: center;
-    color: #4c5679; }
+    color: #4c5679;
+    box-shadow: 5px 5px 5px #4c5679;
+    border-radius: 35% 35%; }
+    @media only screen and (max-width: 890px) {
+      #search-character-container input {
+        width: 70%; } }
     #search-character-container input:focus {
       outline-color: #4c5679;
       outline-width: medium; }
-  #search-character-container button {
-    width: 25%;
-    border-radius: 4px 20px;
-    box-shadow: 5px 5px 2px #4c5679;
-    transition: box-shadow 0.25s;
-    cursor: pointer;
-    font-size: 1em;
-    color: #4c5679; }
-    #search-character-container button:focus {
-      box-shadow: 2px 1px 1px #4c5679;
-      outline: 0; }
 
 #results-character-container {
   text-align: center;
@@ -83,6 +104,9 @@ nav {
     text-align: center;
     margin: 0% 0% 2% 0%;
     font-size: 1.9em; }
+  @media only screen and (max-width: 890px) {
+    #search-for-houses-container {
+      margin: 3% 0% 0% 0%; } }
   #search-for-houses-container #regions {
     margin: 1% -30%;
     width: 28%;

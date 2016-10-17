@@ -4,9 +4,13 @@ $dark-blue: #4c5679;
 $med-grey: #797373;
 $lightgrey: #939194;
 $lightblue: #acb8d1;
+$dark-green: #697162;
+
+@import "partials/mixins";
 @import "partials/header";
 @import "partials/characters";
 @import "partials/houses";
+@import "partials/home";
 
 * {
     font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif;
