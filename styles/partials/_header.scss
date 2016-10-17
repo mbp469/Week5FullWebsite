@@ -5,15 +5,19 @@ header {
     background-size: cover;
 }
 
-h1 {
-    font-size: 3em;
-    color: #797373;
-    text-shadow: -6px -5px 6px $lightgrey;
-    margin-left: 1%;
-    padding-top: 1%;
-    @include tablet {
-      color: $dark-blue;
-      text-shadow: -6px -5px 6px $dark-blue;
+hero {
+    text-align: center;
+
+    h1 {
+        font-size: 3em;
+        color: #797373;
+        text-shadow: -6px -5px 6px $lightgrey;
+        margin-left: 1%;
+        padding-top: 1%;
+        @include tablet {
+            color: $dark-blue;
+            text-shadow: -6px -5px 6px $dark-blue;
+        }
     }
 }
 
@@ -22,8 +26,7 @@ nav {
     position: relative;
     margin-right: 1%;
     @include tablet {
-      float: left;
-      width: 100%;
+        width: 100%;
     }
 
     ul {
@@ -31,33 +34,33 @@ nav {
         position: relative;
         top: -65px;
         @include tablet {
-          top: 61px;
-          display: inline-flex;
-          width: 100%;
+            top: 61px;
+            display: inline-flex;
+            width: 100%;
         };
 
         li {
             margin: 12% 5%;
             text-align: right;
             @include tablet {
-              margin: 7% 2%;
-              text-align: center;
+                margin: 5% 5%;
+                text-align: center;
             }
 
             a {
                 color: $med-green;
                 text-shadow: -2px -2px 2px $med-grey;
                 @include tablet {
-                  color: $dark-green;
-                  text-shadow: -2px -2px 2px $lightblue;
+                    color: $dark-green;
+                    text-shadow: -2px -2px 2px $lightblue;
                 }
 
                 &:focus {
                     color: $lightgrey;
                     text-shadow: -2px -2px 2px $med-blue;
                     @include tablet {
-                      color: $dark-blue;
-                      text-shadow: 02px -2px 2px $lightgrey;
+                        color: $dark-blue;
+                        text-shadow: 2px -2px 2px $lightgrey;
                     }
                 }
             }

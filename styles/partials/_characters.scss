@@ -1,8 +1,8 @@
 #search-character-container {
     margin: 2% auto;
     border: none;
-    padding: 0 0 2% 5%;
-    text-align: left;
+    padding: 1% 0 3%;
+    text-align: center;
     width: 70%;
 
     input {
@@ -15,7 +15,7 @@
         box-shadow: 5px 5px 5px $dark-blue;
         border-radius: 35% 35%;
         @include tablet {
-          width: 70%;
+            width: 70%;
         }
 
         &:focus {

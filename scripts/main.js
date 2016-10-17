@@ -11,34 +11,7 @@
         function updateHash(string) {
             window.location.hash = string;
         }
-        /* navigating based on hash */
-        window.addEventListener("hashchange", function() {
-        if (window.location.hash > 0) {
-          console.log(window.location.hash);
-          switch (hash) {
-            case 'home':
-            $('#top').empty();
-            $('#bottom').empty();
-            buildHomePage();
-            updateHash('home');
-              break;
-            case 'characters':
-            $('#top').empty();
-            $('#bottom').empty();
-            buildCharacterSearchPage();
-            updateHash('characters');
-              break;
-            case 'houses':
-            $('#top').empty();
-            $('#bottom').empty();
-            buildHousesSearchPage();
-            updateHash('houses');
-              break;
-            default:
-              init();
-          }
-        }
-      });
+
 
         /******************** CONSTRUCTORS ******************************/
         function Character(dataObject) {
@@ -217,13 +190,44 @@
 
         function init() {
             $('#top').empty();
-            updateHash('home');
+            // updateHash('home');
             appendTemplate('about', 'top');
-            var hash = location.hash.substring(1);
+            appendTemplate('choose-search', 'bottom');
+            var hash = window.location.hash;
+            /* navigating based on hash */
+            if (window.location.hash.length > 0) {
+              console.log(window.location.hash);
+              switch (hash) {
+                case '#home':
+                $('#top').empty();
+                $('#bottom').empty();
+                buildHomePage();
+                updateHash('home');
+                  break;
+                case '#characters':
+                $('#top').empty();
+                $('#bottom').empty();
+                buildCharacterSearchPage();
+                updateHash('characters');
+                  break;
+                case '#houses':
+                $('#top').empty();
+                $('#bottom').empty();
+                buildHousesSearchPage();
+                updateHash('houses');
+                  break;
+                default:
+                  console.log(hash);
+                  break;
+              }
+              // init();
+            }
+
         }
         /******************** EVENT LISTENERS ******************************/
         //when "Search Characters" is clicked, append a search field.
         $('#character-search-page').on('click', function(event) {
+          event.preventDefault();
             $('#top').empty();
             $('#bottom').empty();
             buildCharacterSearchPage();
@@ -233,6 +237,7 @@
 
         //when "Search Houses" is clicked, append a search field, save selection.
         $('#houses-search-page').on('click', function(event) {
+          event.preventDefault();
             $('#top').empty();
             $('#bottom').empty();
             buildHousesSearchPage();
@@ -241,6 +246,7 @@
 
         //when "Home" is clicked, Build Home Page.
         $('#home-page').on('click', function(event) {
+          event.preventDefault();
             $('#top').empty();
             $('#bottom').empty();
             buildHomePage();
@@ -264,6 +270,7 @@
             var selectedRegion = $('#regions option:selected').text();
             searchHouses(selectedRegion);
         });
+        init();
     });
 
 })();
