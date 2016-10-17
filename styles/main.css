@@ -74,14 +74,15 @@ nav {
     font-size: 1em; }
 
 #search-for-houses-container {
-  display: flex;
-  margin: 2% auto;
+  text-align: center;
+  margin: 0 auto;
   border: none;
-  width: 100%; }
+  width: 100%;
+  display: inline-block; }
   #search-for-houses-container p {
     text-align: center;
-    margin: -3% 2%;
-    font-size: 1.75em; }
+    margin: 0% 0% 2% 0%;
+    font-size: 1.9em; }
   #search-for-houses-container #regions {
     margin: 1% -30%;
     width: 28%;
@@ -89,6 +90,14 @@ nav {
     text-align: center;
     color: #4c5679;
     outline-color: #4c5679; }
+
+#house-list {
+  display: block;
+  margin: 1%;
+  font-size: 1.5em;
+  text-align: center; }
+  #house-list p {
+    margin: 1%; }
 
 * {
   font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif;

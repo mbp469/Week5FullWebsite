@@ -1,13 +1,14 @@
 #search-for-houses-container {
-    display: flex;
-    margin: 2% auto;
+    text-align: center;
+    margin: 0 auto;
     border: none;
     width: 100%;
+    display: inline-block;
 
     p {
-        text-align: center;
-        margin: -3% 2%;
-        font-size: 1.75em;
+      text-align: center;
+      margin: 0% 0% 2% 0%;
+      font-size: 1.9em;
     }
 
     #regions {
@@ -17,5 +18,15 @@
         text-align: center;
         color: $dark-blue;
         outline-color: $dark-blue;
+    }
+}
+
+#house-list {
+  display: block;
+    margin: 1%;
+    font-size: 1.5em;
+    text-align: center;
+    p {
+      margin: 1%;
     }
 }

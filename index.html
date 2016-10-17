@@ -70,16 +70,20 @@
 
     <!-- House Search Page Top Section, appendTo('#top') section. -->
     <script id="houses-search" type="text/x-handlebars-template">
-      <div id="search-for-houses-container"><p>Choose a region to see its houses.</p>
+      <div id="search-for-houses-container">
+        <p>Choose a region to see its houses.</p>
       <select id="regions" type="text" name="regions">
+
     </div>
     </script>
 
     <!-- House Search Page Bottom Section, appendTo('#bottom') section -->
     <script id="house-results" type="text/x-handlebars-template">
+      <div id="house-list">
       {{#each listOfHouses}}
       <p>{{this}}</p>
       {{/each}}
+    </div>
     </script>
 
     <!--******************************************************************************-->

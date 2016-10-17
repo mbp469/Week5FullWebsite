@@ -142,7 +142,7 @@
         function searchHouses(region) {
             var url = 'http://www.anapioficeandfire.com/api/houses';
             if (region) {
-                url += "?region=" + encodeURIComponent(region) + '&pageSize=80';
+                url += "?region=" + encodeURIComponent(region) + '&page=1&pageSize=50';
             }
             $.ajax({
                 method: "GET",
@@ -157,10 +157,32 @@
                             listOfHouses.push(newHouse.name);
                         }
                     }
-                    var context = { listOfHouses };
-                    appendTemplate('house-results', 'bottom', context);
-                    console.log(context);
-                    return listOfHouses;
+                    $.ajax({
+                        method: "GET",
+                        crossDomain: true,
+                        dataType: 'json',
+                        url: 'http://www.anapioficeandfire.com/api/houses' + "?region=" + encodeURIComponent(region) + '&page=2&pageSize=50',
+                        success: function(response) {
+                            for (var index in response) {
+                                if (response[index].region === region) {
+                                    var newHouse = new House(response[index]);
+                                    listOfHouses.push(newHouse.name);
+                                }
+                            }
+                            console.log(listOfHouses);
+                            var context = {
+                                listOfHouses
+                            };
+                            appendTemplate('house-results', 'bottom', context);
+                            console.log(context);
+                            return listOfHouses;
+                        },
+
+                        error: function(data) {
+                            console.log("Error: " + data);
+                        }
+                    });
+
                 },
                 error: function(data) {
                     console.log("Error: " + data);
