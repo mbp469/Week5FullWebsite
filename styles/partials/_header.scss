@@ -9,11 +9,14 @@ h1 {
     font-size: 3em;
     color: #797373;
     text-shadow: -6px -5px 6px $lightgrey;
+    margin-left: 1%;
+
 }
 
 nav {
     font-size: 2em;
     position: relative;
+    margin-right: 1%;
 
     ul {
         float: right;

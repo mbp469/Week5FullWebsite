@@ -1,0 +1,21 @@
+#search-for-houses-container {
+    display: flex;
+    margin: 2% auto;
+    border: none;
+    width: 100%;
+
+    p {
+        text-align: center;
+        margin: -3% 2%;
+        font-size: 1.75em;
+    }
+
+    #regions {
+        margin: 1% -30%;
+        width: 28%;
+        font-size: 1.5em;
+        text-align: center;
+        color: $dark-blue;
+        outline-color: $dark-blue;
+    }
+}

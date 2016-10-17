@@ -7,11 +7,13 @@ header {
 h1 {
   font-size: 3em;
   color: #797373;
-  text-shadow: -6px -5px 6px #939194; }
+  text-shadow: -6px -5px 6px #939194;
+  margin-left: 1%; }
 
 nav {
   font-size: 2em;
-  position: relative; }
+  position: relative;
+  margin-right: 1%; }
   nav ul {
     float: right;
     position: relative;
@@ -26,8 +28,81 @@ nav {
           color: #939194;
           text-shadow: -2px -2px 2px #c4d48e; }
 
+#search-character-container {
+  display: flex;
+  margin: 2% auto;
+  border: none;
+  padding-bottom: 2%; }
+  #search-character-container input {
+    margin: 0 auto;
+    width: 50%;
+    line-height: 3em;
+    font-size: 1.5em;
+    text-align: center;
+    color: #4c5679; }
+    #search-character-container input:focus {
+      outline-color: #4c5679;
+      outline-width: medium; }
+  #search-character-container button {
+    width: 25%;
+    border-radius: 4px 20px;
+    box-shadow: 5px 5px 2px #4c5679;
+    transition: box-shadow 0.25s;
+    cursor: pointer;
+    font-size: 1em;
+    color: #4c5679; }
+    #search-character-container button:focus {
+      box-shadow: 2px 1px 1px #4c5679;
+      outline: 0; }
+
+#results-character-container {
+  text-align: center;
+  padding: 1%;
+  line-height: 2em;
+  font-size: 1.5em; }
+  #results-character-container h2 {
+    font-size: 2.25em;
+    line-height: 2.5em;
+    text-shadow: 2px 3px 5px #446087; }
+  #results-character-container ul p {
+    text-decoration: underline;
+    font-size: 1.25em;
+    padding-top: 1%;
+    text-shadow: 1px 2px 4px #446087; }
+  #results-character-container li {
+    text-decoration: none;
+    font-size: 1em; }
+
+#search-for-houses-container {
+  display: flex;
+  margin: 2% auto;
+  border: none;
+  width: 100%; }
+  #search-for-houses-container p {
+    text-align: center;
+    margin: -3% 2%;
+    font-size: 1.75em; }
+  #search-for-houses-container #regions {
+    margin: 1% -30%;
+    width: 28%;
+    font-size: 1.5em;
+    text-align: center;
+    color: #4c5679;
+    outline-color: #4c5679; }
+
 * {
-  border: 1px solid #4c5679;
-  font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif; }
+  font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif;
+  box-sizing: border-box;
+  color: #797373; }
+
+html {
+  background: url(images/a-land-of-ice-and-fire-571-cropped.jpg), #939194;
+  background-repeat: repeat-y;
+  background-position: 0 -3%;
+  background-position: contain;
+  background-size: cover; }
+
+body {
+  background: #acb8d1; }
 
 /*# sourceMappingURL=main.css.map */

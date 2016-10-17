@@ -3,10 +3,25 @@ $med-green: #c4d48e;
 $dark-blue: #4c5679;
 $med-grey: #797373;
 $lightgrey: #939194;
-
+$lightblue: #acb8d1;
 @import "partials/header";
+@import "partials/characters";
+@import "partials/houses";
 
 * {
-    border: 1px solid $dark-blue;
     font-family: Amita, Courgette, "Fjalla One", "Open Sans Condensed", sans-serif;
+    box-sizing: border-box;
+    color: $med-grey;
+}
+
+html {
+    background: url(images/a-land-of-ice-and-fire-571-cropped.jpg), $lightgrey;
+    background-repeat: repeat-y;
+    background-position: 0 -3%;
+    background-position: contain;
+    background-size: cover;
+}
+
+body {
+    background: $lightblue;
 }

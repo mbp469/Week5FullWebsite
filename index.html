@@ -44,13 +44,20 @@
     <!--*************************** TEMPLATES CHARACTER SEARCH PAGE ******************-->
     <!-- Character Search Page Top Section, appendTo('#top') section. -->
     <script id="character-search" type="text/x-handlebars-template">
-      <div id="search-character-container">search-character-container
-        <input id="character-search-field" type="text" name="character-search" placeholder="Enter a character's name.">
-        <button id="submit-character-search">
+      <div id="search-character-container">
+        <input id="character-search-field" type="text" name="character-search" placeholder="Enter a character's full name.">
+        <button id="submit-character-search">Submit Character Search</button>
       </div>
     </script>
     <!-- Character Search Page Bottom Section, appendTo('#bottom') section -->
     <script id="character-results" type="text/x-handlebars-template">
+      <div id="results-character-container">
+      <h2>{{name}},</h2>
+      <p>Born {{born}}</p>
+      <ul><p>Titles Held: {{#each titles}}</p><li>{{this}}</li>{{/each}}</ul>
+      <ul><p>Aliases: {{#each aliases}}</p><li>{{this}}</li>{{/each}}</ul>
+      <ul><p>Allegiances: {{#each allegiances}}</p><li>{{this}}</li>{{/each}}</ul>
+    </div>
     </script>
 
     <!--*************************** TEMPLATES HOUSE SEARCH PAGE **********************-->
@@ -63,13 +70,16 @@
 
     <!-- House Search Page Top Section, appendTo('#top') section. -->
     <script id="houses-search" type="text/x-handlebars-template">
-      <div id="search-for-houses-container">search a region for its houses
+      <div id="search-for-houses-container"><p>Choose a region to see its houses.</p>
       <select id="regions" type="text" name="regions">
     </div>
     </script>
 
     <!-- House Search Page Bottom Section, appendTo('#bottom') section -->
     <script id="house-results" type="text/x-handlebars-template">
+      {{#each listOfHouses}}
+      <p>{{this}}</p>
+      {{/each}}
     </script>
 
     <!--******************************************************************************-->
