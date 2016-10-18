@@ -27,14 +27,39 @@
             this.titles = dataObject.titles; // array
             this.url = dataObject.url; //contains the character number
             this.born = dataObject.born; // string
+            this.context = this.getContextCharacter;
+
         }
-        Character.prototype.getAllegiancesByName = function() {
-            for (var index in this.allegiances) {
-                var allegianceURL = this.allegiances[index];
-                this.searchHousesByURL(allegianceURL);
-            }
-            console.log(this.allegiancesByName);
-        };
+        // Character.prototype.getAllegiancesByName = function() {
+        //   var array = [];
+        //     for (var index= 0; index < this.allegiances.length; index++) {
+        //         var allegianceURL = this.allegiances[index];
+        //         $.ajax({
+        //             method: "GET",
+        //             crossDomain: true,
+        //             dataType: "json",
+        //             url: allegianceURL,
+        //             success: function(response) {
+        //                 var newHouse = new House(response);
+        //                 array.push(newHouse.name);
+        //             },
+        //             error: function(data) {
+        //                 console.log("Error: data");
+        //             }
+        //         });
+        //     }
+        // };
+        function getContextCharacter (dataObject){
+            var context = {
+                "name": dataObject.name,
+                "born": dataObject.born,
+                "titles": dataObject.titles,
+                "aliases": dataObject.aliases,
+                "allegiances": dataObject.allegiances
+            };
+
+            return context;
+        }
         Character.prototype.toString = function() {
             return "Character: " + this.name;
         };
@@ -69,16 +94,7 @@
             appendTemplate('character-search', 'top');
         }
         /* prepares the context of a character for the template */
-        function getContextCharacter(dataObject) {
-            var context = {
-                "name": dataObject.name,
-                "born": dataObject.born,
-                "titles": dataObject.titles,
-                "aliases": dataObject.aliases,
-                "allegiances": dataObject.allegiances
-            };
-            return context;
-        }
+
         function appendTemplate(script, target, context) {
             context = context || {};
             var source = $('#' + script).html();
@@ -98,17 +114,10 @@
                 dataType: 'json',
                 url: 'http://www.anapioficeandfire.com/api/characters/?name=' + encodeURIComponent(searchString),
                 success: function(response) {
-                    // try {
                     var newChar = new Character(response[0]);
-                    newChar.getAllegiancesByName();
-                    // }
-                    // if(!newChar) throw error;
                     var context = getContextCharacter(newChar);
                     appendTemplate("character-results", "bottom", context);
                     return newChar;
-                    // } catch (error) {
-                    //   alert("Try a different search. That name doesn't match anything in our database.");
-                    // }
                 },
                 error: function(data) {
                     console.log("Error: " + data);
@@ -167,26 +176,7 @@
                 }
             });
         }
-        /* function to take a house url with an id
-          number at the end. creates house object and appends name to
-          this.allegiancesByName array. */
-        Character.prototype.searchHousesByURL = function(houseURL) {
-            $.ajax({
-                method: "GET",
-                crossDomain: true,
-                dataType: "json",
-                url: houseURL,
-                success: function(response) {
-                    var newHouse = new House(response);
-                    console.log(this.allegiancesByName);
-                    this.allegiancesByName.push(newHouse.name);
-                    return newHouse;
-                },
-                error: function(data) {
-                    console.log("Error: data");
-                }
-            });
-        };
+
 
         function init() {
             $('#top').empty();

@@ -18,7 +18,7 @@ hero {
         font-size: 3em;
         color: $dark-blue;
         text-shadow: -6px -5px 6px $lightgrey;
-        margin-left: 1%;
+        margin: 0% 13% 0% 1%;
         padding-top: 1%;
         @include tablet {
             color: $dark-blue;
@@ -30,7 +30,7 @@ hero {
 nav {
     font-size: 2em;
     position: relative;
-    margin-right: 1%;
+    margin-right: 6%;
     @include tablet {
         width: 100%;
     }
@@ -55,6 +55,9 @@ nav {
             display: block;
             font-size: 0.8em;
             top: 25vh;
+        }
+        @include mobile {
+          top: -10vh;
         }
 
         li {
