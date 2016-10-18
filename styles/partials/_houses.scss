@@ -11,7 +11,14 @@
       font-size: 1.9em;
     }
     @include tablet {
-        margin: 3% 0% 0% 0%;
+      margin: 3% 0% 0% 0%;
+    }
+    @include small-tablet {
+      margin: 3% 0 3% 0;
+      font-size: 2.5em;
+    }
+    @include mobile {
+      font-size: 2.25em;
     }
 
     #regions {
@@ -21,6 +28,12 @@
         text-align: center;
         color: $dark-blue;
         outline-color: $dark-blue;
+        @include small-tablet {
+          width: 41%;
+        }
+        @include mobile {
+          width: 65%;
+        }
     }
 }
 

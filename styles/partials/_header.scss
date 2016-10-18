@@ -3,14 +3,20 @@ header {
     background-repeat: no-repeat;
     height: 252px;
     background-size: cover;
+    @include small-tablet {
+        background-attachment: fixed;
+    }
 }
 
 hero {
     text-align: center;
+    @include mobile {
+        position: relative;
+    }
 
     h1 {
         font-size: 3em;
-        color: #797373;
+        color: $dark-blue;
         text-shadow: -6px -5px 6px $lightgrey;
         margin-left: 1%;
         padding-top: 1%;
@@ -28,6 +34,13 @@ nav {
     @include tablet {
         width: 100%;
     }
+    @include small-tablet {
+        top: -165px;
+    }
+    @include mobile {
+      position: absolute;
+      top: 37vh;
+      left: 31vw;    }
 
     ul {
         float: right;
@@ -37,30 +50,38 @@ nav {
             top: 61px;
             display: inline-flex;
             width: 100%;
-        };
+        }
+        @include small-tablet {
+            display: block;
+            font-size: 0.8em;
+            top: 25vh;
+        }
 
         li {
             margin: 12% 5%;
             text-align: right;
             @include tablet {
-                margin: 5% 5%;
+                margin: 5%;
+                text-align: center;
+            }
+            @include mobile {
                 text-align: center;
             }
 
             a {
-                color: $med-green;
-                text-shadow: -2px -2px 2px $med-grey;
+                color: $dark-blue;
+                text-shadow: -2px -2px 2px $lightgrey;
                 @include tablet {
-                    color: $dark-green;
-                    text-shadow: -2px -2px 2px $lightblue;
+                    color: $dark-blue;
+                    text-shadow: -2px -2px 2px $lightgrey;
                 }
 
                 &:focus {
                     color: $lightgrey;
-                    text-shadow: -2px -2px 2px $med-blue;
+                    text-shadow: -2px -2px 2px $dark-blue;
                     @include tablet {
-                        color: $dark-blue;
-                        text-shadow: 2px -2px 2px $lightgrey;
+                        color: $lightgrey;
+                        text-shadow: 2px -2px 2px $dark-blue;
                     }
                 }
             }

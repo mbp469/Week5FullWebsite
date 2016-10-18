@@ -1,3 +1,9 @@
+main {
+  @include mobile {
+    margin: 50vh 5vw;
+    padding: 0vh 3vw 2vh;  }
+}
+
 #top {
     h2 {
         text-align: center;

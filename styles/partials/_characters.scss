@@ -4,6 +4,10 @@
     padding: 1% 0 3%;
     text-align: center;
     width: 70%;
+    @include small-tablet {
+        height: 28vh;
+        position: relative;
+    }
 
     input {
         margin: 0 auto;
@@ -17,10 +21,24 @@
         @include tablet {
             width: 70%;
         }
+        @include small-tablet {
+            width: 100%;
+            height: 18vh;
+            top: 4vh;
+            left: 0;
+            position: absolute;
+        }
+        @include mobile {
+            width: 63vw;
+            height: 16vh;
+            font-size: 1.15em;
+        }
 
         &:focus {
-            outline-color: $dark-blue;
-            outline-width: medium;
+            outline-color: none;
+            background-color: $med-blue;
+            color: $lightgrey;
+            outline: 0;
         }
     }
 }
